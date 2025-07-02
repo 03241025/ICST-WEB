@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ICST University</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+
+  <!-- Lottie Player -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #f8f9fa;
+      color: #212529;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .navbar {
+      background-color: #002147;
+    }
+    .navbar-brand img {
+      height: 65px;
+      margin-right: 25px;
+    }
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important;
+    }
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      text-align: center;
+      padding: 140px 20px 80px;
+      background: url('WhatsApp Image 2025-06-30 at 23.50.24_f13bb102.jpg') no-repeat center center/cover;
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 33, 71, 0.75);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .background-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 12rem;
+      font-weight: 900;
+      color: rgba(255, 193, 7, 0.08);
+      user-select: none;
+      white-space: nowrap;
+      z-index: 1;
+      animation: backgroundTextFadeScale 8s ease-in-out infinite alternate;
+      letter-spacing: 1rem;
+    }
+    @keyframes backgroundTextFadeScale {
+      0% {
+        opacity: 0.05;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      50% {
+        opacity: 0.12;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+      100% {
+        opacity: 0.05;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+    .slide-in-text {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #ffc107;
+      animation: slideInFromLeft 2s ease forwards;
+      margin-bottom: 20px;
+    }
+    @keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+      animation-delay: 2.2s;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    .btn-animated {
+      font-size: 18px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      transition: all 0.4s ease-in-out;
+      background-color: #ffc107;
+      color: #000;
+      border: none;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 2.4s;
+      opacity: 0;
+    }
+    .btn-animated:hover {
+      transform: scale(1.05);
+      background-color: #e0a800;
+    }
+    /* Why Choose Cards */
+    .why-icst-card img,
+    .why-icst-card lottie-player {
+      height: 140px;
+      object-fit: contain;
+      margin-bottom: 1.5rem;
+      margin-top: 0.5rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .why-icst-card {
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      padding: 2.5rem 1.5rem 2rem 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      min-height: 440px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .why-icst-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.13);
+    }
+    .why-icst-card h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+      color: #002147;
+    }
+    .why-icst-card p {
+      font-size: 1.08rem;
+      letter-spacing: 1px;
+      color: #212529;
+      margin-bottom: 2rem;
+    }
+    .why-icst-card .btn {
+      background: #002147;
+      color: #fff;
+      border-radius: 0;
+      border: none;
+      padding: 0.7rem 2.2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: background 0.2s;
+    }
+    .why-icst-card .btn:hover {
+      background: #ffc107;
+      color: #002147;
+    }
+
+    /* Faculties */
+    .faculty-card {
+      border-radius: 20px;
+      background-color: #ffffff;
+      color: #212529;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .faculty-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .faculty-img {
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    /* Contact */
+    .contact-form {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .map-container {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Footer */
+    footer {
+      padding: 20px;
+      background-color: #002147;
+      color: #fff;
+      text-align: center;
+    }
+
+    .social-icons a {
+      color: #ffc107;
+      margin: 0 10px;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+    }
+
+    h2, h3 {
+      color: #002147;
+    }
+
+    /* Gallery Section */
+    .gallery-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,33,71,0.08);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+    .gallery-card:hover {
+      transform: translateY(-10px) scale(1.04);
+      box-shadow: 0 16px 32px rgba(0,33,71,0.18);
+    }
+    .gallery-img-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+    .gallery-img-wrapper img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      transition: filter 0.3s, transform 0.3s;
+    }
+    .gallery-card:hover .gallery-img-wrapper img {
+      filter: brightness(0.85) blur(1px);
+      transform: scale(1.07);
+    }
+    .gallery-title {
+      position: absolute;
+      bottom: 18px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: rgba(0,33,71,0.65);
+      padding: 10px 0;
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+      opacity: 0.95;
+      transition: background 0.3s;
+      pointer-events: none;
+    }
+
+    /* Student Reviews Section */
+    #student-reviews {
+      background-color: #f8f9fa;
+      padding: 60px 0;
+    }
+    .review-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,33,71,0.08);
+      padding: 30px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .review-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,33,71,0.15);
+    }
+    .review-card img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 4px solid #ffc107;
+    }
+    .review-card h5 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #002147;
+      margin-bottom: 5px;
+    }
+    .review-card small {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+    .review-card p {
+      font-size: 1rem;
+      color: #212529;
+      margin-top: 10px;
+    }
+
+    /* Attractive card background for all cards */
+    .card,
+    .review-card,
+    .faculty-card,
+    .contact-form {
+      background: linear-gradient(135deg, #e0e7ff 0%, #f3f6fb 100%);
+    }
+
+    /* Stacked Gallery Card Carousel */
+    .gallery-stack-container {
+      position: relative;
+      min-height: 370px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .stacked-gallery-card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 370px;
+      height: 340px;
+      transition: box-shadow 0.3s;
+      box-shadow: 0 8px 24px rgba(0,33,71,0.13);
+      background: #fff;
+      border-radius: 18px;
+      opacity: 0;
+    }
+    @media (max-width: 991px) {
+      .stacked-gallery-card {
+        width: 95vw;
+        max-width: 370px;
+        right: 0 !important;
+        transform: translateX(0) !important;
+      }
+    }
+    /* Keyframes for each card to land at a different spot */
+    @keyframes yeetLeft1 {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes yeetLeft2 {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      100% { opacity: 1; transform: translateX(500px); }
+    }
+    @keyframes yeetLeft3 {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      100% { opacity: 1; transform: translateX(1000px); }
+    }
+    .stacked-gallery-card.yeet {
+      animation: yeetLeft 1s cubic-bezier(.77,0,.18,1.01) forwards;
+    }
+    /* Custom AOS animation for slide-left */
+    [data-aos="slide-left"] {
+      opacity: 0;
+      transform: translateX(500vw);
+      transition-property: opacity, transform;
+    }
+    [data-aos="slide-left"].aos-animate {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="ICST-Logo-Final@4x-1 (1).png" alt="ICST Logo" />
+        ICST University <br>
+        International Campus Of science & Technology
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faculties">Faculties</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sports">Sports</a></li> 
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="background-text">ICST UNIVERSITY</div>
+    <div class="hero-content">
+      <h1 class="slide-in-text">ICST University</h1>
+      <p class="hero-subtitle">Empowering Future Innovators Through Excellence in Education</p>
+      <a href="#faculties" class="btn btn-animated mt-4">Explore Faculties</a>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-5">
+    <div class="container position-relative" style="min-height:370px;">
+      <h2 class="text-center mb-5 animate__animated animate__fadeInDown">
+        ICST University Gallery
+      </h2>
+      <div class="gallery-stack-yeet" style="position:relative; min-height:370px;">
+        <!-- Card 1 (leftmost after yeet) -->
+        <div class="gallery-card stacked-gallery-card" id="gallery-card-1" style="z-index:3; left:0;">
+          <div class="gallery-img-wrapper" style="height: 260px;">
+            <img src="gallery1.jpg" alt="Gallery 1" class="img-fluid rounded-4" style="height: 100%; object-fit: cover;" />
+            <div class="gallery-title">Gallery 1</div>
+          </div>
+        </div>
+        <!-- Card 2 (middle after yeet) -->
+        <div class="gallery-card stacked-gallery-card" id="gallery-card-2" style="z-index:2; left:0;">
+          <div class="gallery-img-wrapper" style="height: 260px;">
+            <img src="gallery2.jpg" alt="Gallery 2" class="img-fluid rounded-4" style="height: 100%; object-fit: cover;" />
+            <div class="gallery-title">Gallery 2</div>
+          </div>
+        </div>
+        <!-- Card 3 (rightmost after yeet) -->
+        <div class="gallery-card stacked-gallery-card" id="gallery-card-3" style="z-index:1; left:0;">
+          <div class="gallery-img-wrapper" style="height: 260px;">
+            <img src="gallery3.jpg" alt="Gallery 3" class="img-fluid rounded-4" style="height: 100%; object-fit: cover;" />
+            <div class="gallery-title">Gallery 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose ICST University (Lottie Carousel Cards) -->
+  <section class="py-5" id="why-choose-icst">
+    <div class="container">
+      <h2 class="text-center mb-5 animate__animated animate__fadeInDown" data-aos="fade-up" data-aos-duration="1200">
+        Why Choose ICST University?
+      </h2>
+      <div class="row justify-content-center text-center">
+        <!-- Card 1: Innovative Courses -->
+        <div class="col-md-4 mb-4">
+          <div class="why-icst-card h-100 animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-delay="100">
+            <div id="carouselInnovative" class="carousel slide mb-3" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_kyu7xb1v.json" background="transparent" speed="1" style="height:140px; width:auto;" loop autoplay></lottie-player>
+                </div>
+                <div class="carousel-item">
+                  <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_1pxqjqps.json" background="transparent" speed="1" style="height:140px; width:auto;" loop autoplay></lottie-player>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselInnovative" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselInnovative" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+            <h3>INNOVATIVE COURSES</h3>
+            <p>
+              Explore wide-range of innovative and essential courses
+            </p>
+            <a href="#faculties" class="btn btn-animated">EXPLORE</a>
+          </div>
+        </div>
+        <!-- Card 2: Top Instructors -->
+        <div class="col-md-4 mb-4">
+          <div class="why-icst-card h-100 animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-delay="200">
+            <div id="carouselInstructors" class="carousel slide mb-3" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <!-- Animated person/teacher -->
+                  <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_2ks3pjua.json" background="transparent" speed="1" style="height:140px; width:auto;" loop autoplay></lottie-player>
+                </div>
+                <div class="carousel-item">
+                  <!-- Another animated person/teacher -->
+                  <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json" background="transparent" speed="1" style="height:140px; width:auto;" loop autoplay></lottie-player>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselInstructors" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselInstructors" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+            <h3>TOP INSTRUCTORS</h3>
+            <p>
+              Learn from the best experts and professors of the subjects
+            </p>
+            <a href="#faculties" class="btn btn-animated">EXPLORE</a>
+          </div>
+        </div>
+        <!-- Card 3: Student Residence -->
+        <div class="col-md-4 mb-4">
+          <div class="why-icst-card h-100 animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-delay="300">
+            <div id="carouselResidence" class="carousel slide mb-3" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <!-- Animated building -->
+                  <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_4kx2q32n.json" background="transparent" speed="1" style="height:140px; width:auto;" loop autoplay></lottie-player>
+                </div>
+                <div class="carousel-item">
+                  <!-- Another animated building -->
+                  <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_5ngs2ksb.json" background="transparent" speed="1" style="height:140px; width:auto;" loop autoplay></lottie-player>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselResidence" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselResidence" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+            <h3>STUDENT RESIDENCE</h3>
+            <p>
+              Student residence at ICST is a captivating blend of architectural finesse...
+            </p>
+            <a href="#contact" class="btn btn-animated">EXPLORE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="py-5" style="background: linear-gradient(135deg, #f3f6fb 0%, #e0e7ff 100%);">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <!-- Founder Card -->
+        <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-right" data-aos-delay="100">
+          <div class="card founder-card shadow-lg border-0 rounded-4 text-center p-4 animate__animated">
+            <img src="hisbollah.jpg" alt="Founder Hisbullah" class="rounded-circle mx-auto mb-3" style="width:140px; height:140px; object-fit:cover; border:5px solid #ffc107; box-shadow:0 4px 16px rgba(0,33,71,0.15);">
+            <h5 class="mb-1" style="color:#002147; font-size:1.4rem; font-weight:700;">Hisbullah</h5>
+            <small class="text-muted" style="font-size:1.05rem;">Founder &amp; Visionary</small>
+            <div class="mt-2 text-warning" style="font-size:1.3rem;">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="mt-3" style="font-size:1.05rem;">
+              "Education is the passport to the future, for tomorrow belongs to those who prepare for it today."
+            </p>
+          </div>
+        </div>
+        <!-- About Us Text -->
+        <div class="col-lg-8" data-aos="fade-left" data-aos-delay="200">
+          <div class="card shadow-lg border-0 rounded-4 p-4 animate__animated">
+            <div class="card-body">
+              <h2 class="card-title text-center mb-4" style="color:#002147;">About Us</h2>
+              <p class="card-text text-center" style="font-size:1.15rem;">
+                ICST University is a premier institution dedicated to academic excellence and career development.<br>
+                We offer globally recognized programs in IT, management, and engineering to shape the leaders of tomorrow.
+                <br><br>
+                Our mission is to empower students with the knowledge, skills, and values needed to thrive in a rapidly changing world. 
+                At ICST, we foster a culture of innovation, critical thinking, and lifelong learning. Our experienced faculty, modern facilities, and industry partnerships ensure that students receive a holistic education that combines theory with real-world application.
+                <br><br>
+                We are committed to nurturing a diverse and inclusive community where every student is encouraged to reach their full potential. Whether you are interested in technology, business, or engineering, ICST University provides the resources and support to help you achieve your academic and professional goals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faculties -->
+  <section id="faculties" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5" data-aos="fade-up" data-aos-duration="1500">Our Faculty</h2>
+      <div class="row g-4">
+        <!-- Computing -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+          <div class="faculty-card p-3">
+            <img src="https://www.jtmcoef.ac.in/storage/app/media/uploaded-files/357288240474179n.jpg" class="w-100 faculty-img" alt="Computing" />
+            <h3 class="mt-3">Computing</h3>
+            <p>HDIT - Cutting-edge IT education for a digital world.</p>
+            <a href="#" class="btn btn-animated btn-sm mt-2">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Management -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+          <div class="faculty-card p-3">
+            <img src="https://nyasolutions.com/wp-content/uploads/2018/05/management.jpg" class="w-100 faculty-img" alt="Management" />
+            <h3 class="mt-3">Management</h3>
+            <p>ACCA Program - Global qualification in finance and management.</p>
+            <a href="#" class="btn btn-animated btn-sm mt-2">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Engineering -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+          <div class="faculty-card p-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOLvNpfS4cPbu1VMlydg_P1NlfD79kzet6eA&s" class="w-100 faculty-img" alt="Engineering" />
+            <h3 class="mt-3">Engineering</h3>
+            <p>QS - Learn the science of construction cost and estimation.</p>
+            <a href="#" class="btn btn-animated btn-sm mt-2">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sports Section -->
+  <section id="sports" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5" data-aos="fade-up" data-aos-duration="1500">Sports</h2>
+      <div class="row g-4 justify-content-center">
+        <!-- Cricket -->
+        <div class="col-md-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+          <div class="faculty-card p-3 text-center">
+            <img src="cricket.jpg" alt="ICST Cricket Team" class="w-100 cricket-animated mb-3" style="max-height:260px; object-fit:cover;" />
+            <h3 class="mt-3">Cricket</h3>
+            <p>Join our university cricket team and participate in inter-university tournaments and training sessions.</p>
+          </div>
+        </div>
+        <!-- Football -->
+        <div class="col-md-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+          <div class="faculty-card p-3 text-center">
+            <img src="WhatsApp Image 2025-07-01 at 14.22.40_e093cf3b.jpg" alt="ICST Football Team" class="w-100 faculty-img mb-3" style="max-height:260px; object-fit:cover;" />
+            <div style="font-size:3rem;">⚽</div>
+            <h3 class="mt-3">Football</h3>
+            <p>Be a part of our vibrant football club, open for all skill levels and regular matches on campus.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up" data-aos-duration="1200">Contact Us</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8 contact-form" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
+          <form id="contactForm">
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email address</label>
+              <input type="email" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Gender</label>
+              <select class="form-control" id="gender" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Address</label>
+              <input type="text" class="form-control" id="address" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-animated">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Map -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up" data-aos-duration="1200">Our Location</h2>
+      <div class="map-container" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15847.18602993413!2d81.483333!3d7.983333!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b9a7e2e2e2e2e2e%3A0x0!2sX987%2BPQ%2C%20Kayankerni!5e0!3m2!1sen!2slk!4v1700000000000"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+<!-- Student Review Section -->
+<section id="student-reviews" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5" data-aos="fade-up" data-aos-duration="1200">What Our Students Say</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-7">
+        <div class="card review-card shadow-lg border-0 rounded-4 p-4 animate__animated" data-aos="zoom-in-up" data-aos-delay="150">
+          <div class="d-flex align-items-center mb-3 flex-column flex-sm-row text-center text-sm-start">
+            <img src="student.jpg" alt="Student" class="rounded-circle shadow mx-auto mx-sm-0" style="width:140px; height:140px; object-fit:cover; border:5px solid #ffc107;">
+            <div class="ms-sm-4 mt-3 mt-sm-0 w-100">
+              <h5 class="mb-1" style="color:#002147; font-size:1.5rem;">Hanaan Hamath</h5>
+              <small class="text-muted" style="font-size:1.1rem;">BSc Computing</small>
+              <div class="mt-2 text-warning" style="font-size:1.4rem;">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="mb-0" style="font-size:1.18rem;">
+            "ICST University gave me the confidence and skills to pursue my dream career in IT. The faculty are supportive, and the campus environment is truly inspiring!"
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ICST University. All Rights Reserved.</p>
+    <div class="social-icons mt-2">
+      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true
+    });
+  </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  function yeetCards() {
+    const cards = [
+      document.getElementById('gallery-card-1'),
+      document.getElementById('gallery-card-2'),
+      document.getElementById('gallery-card-3')
+    ];
+    setTimeout(() => {
+      cards[0].style.opacity = 1;
+      cards[0].style.animation = "yeetLeft1 1s cubic-bezier(.77,0,.18,1.01) forwards";
+    }, 0);
+    setTimeout(() => {
+      cards[1].style.opacity = 1;
+      cards[1].style.animation = "yeetLeft2 1s cubic-bezier(.77,0,.18,1.01) forwards";
+    }, 350);
+    setTimeout(() => {
+      cards[2].style.opacity = 1;
+      cards[2].style.animation = "yeetLeft3 1s cubic-bezier(.77,0,.18,1.01) forwards";
+    }, 700);
+  }
+
+  function onScroll() {
+    const gallery = document.getElementById('gallery');
+    const rect = gallery.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      yeetCards();
+      window.removeEventListener('scroll', onScroll);
+    }
+  }
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+});
+  </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  // ...existing yeetCards code...
+
+  // Contact form redirect logic
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const gender = document.getElementById('gender').value;
+      const address = document.getElementById('address').value;
+      // Redirect to a new page with gender and address as query params
+      window.location.href = `thankyou.html?gender=${encodeURIComponent(gender)}&address=${encodeURIComponent(address)}`;
+    });
+  }
+});
+</script>
+</body>
+</html>
